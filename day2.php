@@ -31,6 +31,11 @@
                    Price : $this->price <br>
                    Quantity : $this->stockQuantity ";
         }
+
+        public function GetProductName()
+        {
+            return $this->productName;
+        }
     }
     // instance
     $product1 = new Product("Milo <br>", "12 <br>", "50 <br>");
@@ -45,7 +50,9 @@
     // 
 
     // ACCESING THE PRIVATE PROPERTIES USING METHODS THAT HAS PUBLIC ACCESS MODIFIERS
-    echo $product1->GetInfo();
+    // echo $product1->GetInfo();
+
+    echo $product1->GetProductName()
     ?>
 
 
