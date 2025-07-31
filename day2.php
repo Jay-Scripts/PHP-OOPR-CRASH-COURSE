@@ -13,9 +13,9 @@
     class Product
     {
         // objects
-        public $productName;
-        public $price;
-        public $stockQuantity;
+        private $productName;
+        private $price;
+        private $stockQuantity;
 
         // constructor
         public function __construct($productName, $price, $stockQuantity)
@@ -23,6 +23,13 @@
             $this->productName = $productName;
             $this->price = $price;
             $this->stockQuantity = $stockQuantity;
+        }
+
+        public function GetInfo() // this will be accessible outside the class because the access modifiers for this method was set as public then it can access the private properties because it was encapsulated inside the class
+        {
+            echo "Product : $this->productName <br>
+                   Price : $this->price <br>
+                   Quantity : $this->stockQuantity ";
         }
     }
     // instance
@@ -32,10 +39,16 @@
     // print_r($product2)
 
     // ACCESSING THE PROPERTIES IT WAS SET AS PUBLIC
-    echo " Product  : $product1->productName <br> 
-           Price    : $product1->price <br>
-           Quantity : $product1->stockQuantity";
+    // echo " Product  : $product1->productName <br> 
+    //        Price    : $product1->price <br>
+    //        Quantity : $product1->stockQuantity";
+    // 
+
+    // ACCESING THE PRIVATE PROPERTIES USING METHODS THAT HAS PUBLIC ACCESS MODIFIERS
+    echo $product1->GetInfo();
     ?>
+
+
 
 </body>
 
