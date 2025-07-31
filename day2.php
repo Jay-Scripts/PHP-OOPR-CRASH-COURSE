@@ -32,9 +32,14 @@
                    Quantity : $this->stockQuantity ";
         }
 
-        public function GetProductName()
+
+        public function GetProductName() // using this GET to get the value of a private properties of a class
         {
             return $this->productName;
+        }
+        public function SetProductName($productName) // using this SET to Set a new value of a private properties of a class
+        {
+            return $this->productName = $productName;
         }
     }
     // instance
@@ -52,7 +57,10 @@
     // ACCESING THE PRIVATE PROPERTIES USING METHODS THAT HAS PUBLIC ACCESS MODIFIERS
     // echo $product1->GetInfo();
 
-    echo $product1->GetProductName()
+    // ACCESING THE PRIVATE PROPERTIES USING GET METHODS THAT HAS PUBLIC ACCESS MODIFIERS
+    echo $product1->GetProductName(); // by using this we can access the private properties of the class
+
+    echo $product1->SetProductName("Jollibee");; // by using this we can set the private properties of the class
     ?>
 
 
